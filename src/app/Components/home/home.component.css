@@ -1,0 +1,377 @@
+.container-fluid {
+    background-color: rgb(194, 224, 163);
+    background-size: cover;
+    
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .header {
+    background-color: rgba(129, 233, 129, 0.8);
+    color: white;
+    padding: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: right;
+    height: 12%;
+  }
+  
+  .footer {
+    background-color: rgba(0, 0, 0, 0.842);
+    color: white;
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 7%;
+  }
+  
+  .navbar-horizontal {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left:0;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+  
+  .nav-link {
+    padding: 0;
+    text-align: right;
+  }
+  
+  .nav-link.btn {
+    padding: 0;
+    background: whitesmoke;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 0.1em 1em;
+    color: rgb(0, 123, 0, 0.8);
+    background-color: rgba(21, 255, 0, 0.171);
+    margin-right: 10px;
+  
+    transition: transform 0.3s, background-color 0.3s, color 0.3s;
+  }
+  
+  .nav-link.btn:hover,
+  .nav-link.btn:focus {
+    text-decoration: underline;
+    transform: translateY(10px);
+    color: rgb(0, 0, 0); /* Darker Bootstrap primary color */
+  }
+
+  /*main section css */
+
+  body{
+    background-color:rgb(0, 0, 0);
+  }
+  nav{
+    border-radius: 40px;
+    background-color:rgb(194, 224, 163);
+  }
+  a{
+    text-decoration: none;
+    color: #000;
+  }
+  a:hover{
+    color:rgba(100, 16, 16, 0.813); 
+  }
+  .container,.container-fluid{
+    background-size: cover;
+    background-position: center;
+    padding:0%;
+    /* border-bottom-left-radius: 50% 60px; 
+    border-bottom-right-radius: 50% 60px;  */
+  }
+  .nav-link:hover{
+    padding-bottom: 5px; /* Adjust the value as needed */
+    border-bottom: 2px solid rgba(100, 16, 16, 0.813); 
+    
+    
+  }
+  .card-img{
+    background-position: center;
+    background-size: cover;
+  }
+  
+  
+  #img-home{
+    border: 2px solid rgba(100, 16, 16, 0.813);
+    border-radius: 30px;
+    height: 450px;
+    width: 600px;
+  }
+  .get-started-btn {
+    padding: 15px 30px;
+    font-size: 18px;
+    border: none;
+    background-color: rgb(124, 180, 68); /* Green color */
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .get-started-btn:hover {
+    background-color:rgb(168, 231, 66); /* Darker green on hover */
+  }
+  
+  /* Animation */
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  .get-started-btn:hover {
+    animation: pulse 0.5s infinite alternate;
+  }
+  .navbar-nav .nav-item .nav-link.active {
+    position: relative;
+  }
+  .btn:hover{
+    animation: pulse 0.5s infinite alternate;
+    background-color:rgb(168, 231, 66);  ;
+  }
+  .btn{
+   background-color:rgb(124, 180, 68); ;
+  }
+  
+  .navbar-nav .nav-item .nav-link.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 100%;
+    height: 2px; /* Thickness of the underline */
+    background-color: rgb(124, 180, 68); 
+  }
+  
+  #who-am-i {
+    
+    padding: 100px 0;
+  }
+  
+  .section-title {
+    color: rgb(124, 180, 68);
+    font-size: 36px;
+    margin-bottom: 30px;
+  }
+  
+  .bullet-points {
+    margin-top: 20px;
+    
+  }
+  
+  .bullet-points ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .bullet-points ul li {
+    position: relative;
+    padding-left: 30px;
+    font-size: 18px;
+    color:rgba(100, 16, 16, 0.813); 
+    margin-bottom: 10px;
+  }
+  
+  .bullet-points ul li:before {
+    content: "\2022";
+    position: absolute;
+    left: 0;
+    color: rgb(124, 180, 68);
+    font-size: 24px;
+    line-height: 1;
+  }
+  
+  .section-image img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Animation */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .section-content {
+    animation: fadeInUp 5s ease forwards ;
+    
+  }
+  /* Green-yellow theme */
+  #contact-us {
+    /* Green-yellow */
+    color: rgb(124, 180, 68);
+  }
+  
+  /* Animations */
+  .section-title {
+    animation: slideInLeft 5s ease forwards;
+  }
+  
+  .section-content {
+    animation: fadeIn 1s ease forwards;
+  }
+  
+  /* Keyframe animations */
+  @keyframes slideInLeft {
+    from {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  .features-container {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  }
+  
+  .feature-item {
+    
+    padding: 20px;
+    margin-bottom: 10px;
+    display: flex;
+    
+    width: fit-content;
+    animation: fadeInRight 3s ease forwards;
+  }
+  
+  .feature-icon {
+    color:  rgb(124, 180, 68);
+    margin-right: 10px;
+    font-size:x-large;
+  }
+  
+  .feature-text {
+    color:rgba(100, 16, 16, 0.813); 
+    font-size: x-large;
+  }
+  
+  .footer {
+    /* background-color: #000; */
+    padding: 8px 0;
+    color: rgb(124, 180, 68);
+  }
+  
+  .footer h3 {
+    /* color: #fff; */
+    color: rgb(124, 180, 68);
+  }
+  
+  .footer p {
+    margin-bottom: 10px;
+  }
+  
+  .social-links li {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  
+  .social-links li:last-child {
+    margin-right: 0;
+  }
+  
+  .social-links a {
+    color:  rgb(194, 224, 163);
+    /* color: #fff; */
+    font-size: 24px;
+  }
+  
+  .social-links a:hover {
+    /* Change to desired hover color */
+    color:  rgba(100, 16, 16, 0.813);
+  }
+  h2{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: rgba(100, 16, 16, 0.813);
+    font-size:xx-large;
+  
+  }
+  .form-group{
+    border:2px solid rgb(194, 224, 163);
+    border-radius: 10px;
+  }
+  
+  p{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: white;
+    font-size:larger;
+  }
+
+  /* Tagline styles */
+.tagline {
+  text-align: center;
+  margin-top: 10px;
+  animation: pulse 3s infinite;
+  margin-bottom: 20px;
+}
+
+.tagline h2 {
+  font-family: 'Cambria, Cochin, Georgia, Times, 'Times New Roman', serif';
+  font-size: 24px;
+  color: rgba(100, 16, 16, 0.813);
+}
+
+/* Keyframe animation for pulse effect */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+  /* .typewriter {
+    overflow: hidden; 
+    border-right: .15em solid orange;
+    white-space: nowrap; 
+    margin: 0 auto;
+    letter-spacing: .15em; 
+  }
+  
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+  
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: orange }
+  } */

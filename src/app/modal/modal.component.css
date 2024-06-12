@@ -1,0 +1,98 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  max-width: 600px;
+  width: 90%;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow-y: auto;
+  max-height: 80%;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: white;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+  color: white;
+}
+
+.course-details {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.course-image {
+  width: 150px;
+  height: auto;
+  border-radius: 5px;
+}
+
+.course-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.course-info p {
+  margin: 5px 0;
+}
+
+.course-info a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.course-info a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  .modal-content {
+    width: 100%;
+    margin: 0 10px;
+  }
+
+  .course-details {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .course-image {
+    width: 100%;
+    height: auto;
+  }
+}
