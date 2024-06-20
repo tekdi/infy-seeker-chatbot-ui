@@ -218,16 +218,22 @@
   /* Green-yellow theme */
   #contact-us {
     /* Green-yellow */
+   
     color: rgb(124, 180, 68);
   }
   
   /* Animations */
   .section-title {
+    
     animation: slideInLeft 5s ease forwards;
   }
-  
+   
   .section-content {
+    border: 1px solid black;
+    padding: 20px;
     animation: fadeIn 1s ease forwards;
+    margin-bottom: 20px;
+    border-radius: 25px;
   }
   
   /* Keyframe animations */

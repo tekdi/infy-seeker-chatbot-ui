@@ -1,10 +1,11 @@
-.image{
+.image {
   background-image: url(bg2.jpg);
   background-size: cover;
   height: 90vh;
   display: flex;
   flex-direction: column; 
 }
+
 .chatbox {
   width: 60%;
   margin: 40px auto;
@@ -78,26 +79,28 @@
   border-radius: 15px;
   display: flex;
   align-items: center;
+  flex-wrap: nowrap; /* Ensure items do not wrap to the next line */
 }
 
 .chat-input input[type="text"] {
-  width: 86%;
+  flex: 1; /* Allow input to take available space */
   padding: 10px;
   border: none;
   border-radius: 15px;
   font-size: 16px;
+  margin-right: 10px; /* Add space between input and other elements */
 }
 
 .voice-icon {
-  display: inline-block;
-  cursor: pointer;
   margin-left: 10px;
 }
 
 .send-icon {
-  display: inline-block;
-  cursor: pointer;
   margin-left: 10px;
+}
+
+.chat-input select {
+  margin-left: 10px; /* Space between elements */
 }
 
 .enroll-button,
@@ -167,18 +170,17 @@ form input {
   right: 0;
   z-index: -1;
   background: #0e0e10;
-  
 }
 
 .btn-gradient-20:hover {
   background-image: linear-gradient(-45deg, #e5ff00c9, #5eff00, #e5ff00c9, #5eff00);
-  box-shadow: 0 12px 24px 
-rgba(128, 128, 128, 0.1);
+  box-shadow: 0 12px 24px rgba(128, 128, 128, 0.1);
 }
 
 .btn-gradient-20:hover .text {
   background-image: linear-gradient(-45deg, #053ef8, #ff0000);
 }
+
 .loading-message {
   display: flex;
   align-items: center;
@@ -222,14 +224,6 @@ rgba(128, 128, 128, 0.1);
   margin-right: 5px; /* Adjust spacing between icon and message */
 }
 
-.right {
-  justify-content: flex-end;
-}
-
-.left {
-  justify-content: flex-start;
-}
-
 /* Styling the form */
 #user-details-form {
   display: flex;
@@ -264,4 +258,60 @@ rgba(128, 128, 128, 0.1);
 
 #user-details-form button:hover {
   background-color: #45a049;
+}
+
+@media (max-width: 768px) {
+  .chatbox {
+    width: 90%;
+    margin: 20px auto;
+    height: 75vh;
+  }
+
+  .chat-input input[type="text"] {
+    font-size: 14px;
+  }
+
+  .chat-input select {
+    width: auto;
+    margin-left: 10px;
+  }
+
+  .send-icon, .voice-icon {
+    margin-left: 5px;
+  }
+
+  .btn-gradient-20 {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .chatbox {
+    width: 100%;
+    margin: 10px;
+    height: 80vh;
+  }
+
+  .chat-input {
+    flex-direction: row; /* Ensure elements are in a row */
+    flex-wrap: nowrap; /* Prevent wrapping */
+  }
+
+  .chat-input input[type="text"] {
+    width: 70%;
+    font-size: 12px;
+    margin-right: 10px;
+  }
+
+  .voice-icon, .send-icon {
+    margin: 0 5px; /* Adjust spacing as needed */
+  }
+
+  .chat-input select {
+    margin-left: 5px;
+  }
+
+  .btn-gradient-20 {
+    font-size: 12px;
+  }
 }

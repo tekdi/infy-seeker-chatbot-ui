@@ -304,6 +304,7 @@ handleSubmit(event: Event, courseId: string, providerId: string) {
   }
 
   clearChat() {
+    window.location.reload();
     this.messages = [
       { sender: 'bot', content: 'Hello! How can I help you?' }
     ];

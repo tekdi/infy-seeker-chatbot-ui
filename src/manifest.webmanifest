@@ -1,6 +1,6 @@
 {
-  "name": "chatbot-frontend",
-  "short_name": "chatbot-frontend",
+  "name": "Chatbot",
+  "short_name": "Chatbot",
   "theme_color": "#1976d2",
   "background_color": "#fafafa",
   "display": "standalone",

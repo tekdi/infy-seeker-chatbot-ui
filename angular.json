@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "chatbot-frontend": {
+    "Chatbot": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -23,7 +23,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/chatbot-frontend",
+            "outputPath": "dist/chatbot",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -39,12 +39,7 @@
               "src/styles.css",
               "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
-            "scripts": [],
-            "server": "src/main.server.ts",
-            "prerender": true,
-            "ssr": {
-              "entry": "server.ts"
-            }
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -75,10 +70,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "chatbot-frontend:build:production"
+              "buildTarget": "Chatbot:build:production"
             },
             "development": {
-              "buildTarget": "chatbot-frontend:build:development"
+              "buildTarget": "Chatbot:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -86,7 +81,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "chatbot-frontend:build"
+            "buildTarget": "Chatbot:build"
           }
         },
         "test": {

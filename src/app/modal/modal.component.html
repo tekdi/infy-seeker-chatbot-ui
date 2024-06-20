@@ -3,7 +3,6 @@
     <div class="modal-body">
       <div *ngFor="let response of responses">
         <div class="course-details">
-          <p><strong>Course Name:</strong> {{ response.message.order.items[0].descriptor.name }}</p>
           <img *ngIf="response.message.order.provider.descriptor.images.length > 0"
                class="course-image"
                [src]="response.message.order.provider.descriptor.images[0].url"
@@ -13,39 +12,39 @@
                src="https://via.placeholder.com/150"
                alt="Default Course Image">
           
-          <p><strong>Short Description:</strong> {{ response.message.order.items[0].descriptor.short_desc }}</p>
-          <p><strong>Long Description:</strong> {{ response.message.order.items[0].descriptor.long_desc }}</p>
-          
-          <!-- Handle media from descriptor -->
-          <ng-container *ngIf="response.message.order.items[0].descriptor.media && response.message.order.items[0].descriptor.media.length > 0">
-            <ng-container *ngFor="let media of response.message.order.items[0].descriptor.media">
-              <p *ngIf="media.url">
-                <strong>Content Link:</strong> <a [href]="media.url" target="_blank">Watch Video</a>
-              </p>
+          <div class="course-info">
+            <h2>{{ response.message.order.items[0].descriptor.name }}</h2>
+            <p><strong>Short Description:</strong> {{ response.message.order.items[0].descriptor.short_desc }}</p>
+            <p><strong>Long Description:</strong> {{ response.message.order.items[0].descriptor.long_desc }}</p>
+            
+            <ng-container *ngIf="response.message.order.items[0].descriptor.media && response.message.order.items[0].descriptor.media.length > 0">
+              <ng-container *ngFor="let media of response.message.order.items[0].descriptor.media">
+                <p *ngIf="media.url">
+                  <strong>Content Link:</strong> <a [href]="media.url" target="_blank">Watch Video</a>
+                </p>
+              </ng-container>
             </ng-container>
-          </ng-container>
-
-          <!-- Handle media from stops -->
-          <ng-container *ngIf="response.message.order.fulfillments[0].stops[0].instructions.media && response.message.order.fulfillments[0].stops[0].instructions.media.length > 0">
-            <ng-container *ngFor="let media of response.message.order.fulfillments[0].stops[0].instructions.media">
-              <p *ngIf="media.url">
-                <strong>Content Link:</strong> <a [href]="media.url" target="_blank">Watch Video</a>
-              </p>
+            
+            <ng-container *ngIf="response.message.order.fulfillments[0].stops[0].instructions.media && response.message.order.fulfillments[0].stops[0].instructions.media.length > 0">
+              <ng-container *ngFor="let media of response.message.order.fulfillments[0].stops[0].instructions.media">
+                <p *ngIf="media.url">
+                  <strong>Content Link:</strong> <a [href]="media.url" target="_blank">Watch Video</a>
+                </p>
+              </ng-container>
             </ng-container>
-          </ng-container>
-
-          <ng-container *ngIf="!(response.message.order.items[0].descriptor.media && response.message.order.items[0].descriptor.media.length > 0) &&
-                                !(response.message.order.fulfillments[0].stops[0].instructions.media && response.message.order.fulfillments[0].stops[0].instructions.media.length > 0)">
-            <p><strong>Content Link:</strong> N/A</p>
-          </ng-container>
-
-          <p><strong>Price:</strong> {{ response.message.order.items[0].price.value }} {{ response.message.order.items[0].price.currency }}</p>
-          <p><strong>Rating:</strong> {{ response.message.order.items[0].rating || 'N/A' }}</p>
-          
-          <!-- Voice Assistant Button -->
-          <button class="btn btn-info" (click)="readAloud(response.message.order.items[0].descriptor)">
-            <i class="fas fa-microphone"></i> Listen
-          </button>
+            
+            <ng-container *ngIf="!(response.message.order.items[0].descriptor.media && response.message.order.items[0].descriptor.media.length > 0) &&
+                                  !(response.message.order.fulfillments[0].stops[0].instructions.media && response.message.order.fulfillments[0].stops[0].instructions.media.length > 0)">
+              <p><strong>Content Link:</strong> N/A</p>
+            </ng-container>
+            
+            <p><strong>Price:</strong> {{ response.message.order.items[0].price.value }} {{ response.message.order.items[0].price.currency }}</p>
+            <p><strong>Rating:</strong> {{ response.message.order.items[0].rating || 'N/A' }}</p>
+            
+            <button class="btn btn-info" (click)="readAloud(response.message.order.items[0].descriptor)">
+              <i class="fas fa-microphone"></i> Listen
+            </button>
+          </div>
         </div>
       </div>
     </div>

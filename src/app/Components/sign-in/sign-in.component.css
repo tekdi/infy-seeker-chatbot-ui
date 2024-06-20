@@ -56,6 +56,7 @@
 .background {
 
 background-size: cover;
+height:80vh;
 background-position: center;
 }
 body{

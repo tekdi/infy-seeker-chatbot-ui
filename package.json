@@ -8,7 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr": "node dist/chatbot-frontend/server/server.mjs",
-    "start-pwa": "ng build --configuration production && http-server -p 8080 -c-1 dist/chatbot-frontend/browser"
+    "start-pwa": "ng build --configuration production && http-server -p 8080 -c-1 dist/chatbot/browser"
   },
   "private": true,
   "dependencies": {

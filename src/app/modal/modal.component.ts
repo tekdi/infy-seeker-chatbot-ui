@@ -10,6 +10,7 @@ export class ModalComponent {
   @Output() close = new EventEmitter<void>();
   @Output() next = new EventEmitter<void>();
 
+  
   closeModal() {
     if ('speechSynthesis' in window) {
       window.speechSynthesis.cancel(); // Stop any ongoing speech
@@ -30,9 +31,7 @@ export class ModalComponent {
     const language = this.detectLanguage(textToRead);
 
     if ('speechSynthesis' in window) {
-      const speech = new SpeechSynthesisUtterance(textToRead);
-      speech.lang = language;
-      window.speechSynthesis.speak(speech);
+      this.speakText(textToRead, language);
     } else {
       alert('Sorry, your browser does not support text to speech.');
     }
@@ -45,5 +44,49 @@ export class ModalComponent {
       return 'hi-IN'; // Hindi
     }
     return 'en-US'; // Default to English
+  }
+
+  speakText(text: string, language: string) {
+    const maxChunkLength = 100; // Define a maximum length for each chunk
+    const textChunks = this.splitTextIntoChunks(text, maxChunkLength);
+
+    let utteranceIndex = 0;
+
+    const speakNextChunk = () => {
+      if (utteranceIndex < textChunks.length) {
+        const speech = new SpeechSynthesisUtterance(textChunks[utteranceIndex]);
+        speech.lang = language;
+        speech.onend = speakNextChunk; // Queue the next chunk when this one ends
+        window.speechSynthesis.speak(speech);
+        utteranceIndex++;
+      }
+    };
+
+    speakNextChunk(); // Start the chain
+  }
+
+  splitTextIntoChunks(text: string, maxChunkLength: number): string[] {
+    const chunks = [];
+    let startIndex = 0;
+
+    while (startIndex < text.length) {
+      let endIndex = Math.min(startIndex + maxChunkLength, text.length);
+
+      // Try to avoid breaking in the middle of a word
+      if (endIndex < text.length) {
+        while (endIndex > startIndex && text[endIndex] !== ' ' && text[endIndex] !== '.') {
+          endIndex--;
+        }
+      }
+
+      if (endIndex === startIndex) {
+        endIndex = Math.min(startIndex + maxChunkLength, text.length);
+      }
+
+      chunks.push(text.substring(startIndex, endIndex).trim());
+      startIndex = endIndex;
+    }
+
+    return chunks;
   }
 }

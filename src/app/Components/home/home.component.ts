@@ -8,7 +8,6 @@ import { Router, NavigationEnd } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
   isHomePage: boolean = true;
-
   constructor(private router: Router) {}
 
   ngOnInit(): void {
@@ -21,9 +20,22 @@ export class HomeComponent implements OnInit {
         this.checkRoute();
       }
     });
+   
   }
 
+  
   private checkRoute(): void {
     this.isHomePage = this.router.url === '/';
+  }
+
+  onLogout(): void {
+    // Clear session storage
+
+    sessionStorage.clear();
+    console.log("In Logout")
+    sessionStorage.setItem("isloggedIn","false");
+    
+    // Navigate to the login page or home page
+    //this.router.navigate(['/']);
   }
 }
