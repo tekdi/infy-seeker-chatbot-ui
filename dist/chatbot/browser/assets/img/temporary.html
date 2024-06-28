@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<meta http-equiv="refresh" content="6;url=main page/mainp.php" />-->
+    <title>Document</title>
+    <style>
+        body{
+            box-sizing: border-box;
+            overflow: hidden;
+            /*background:linear-gradient(to bottom left,rgba(247, 247, 161,0.5),rgba(199, 250, 233,0.5),rgba(239, 232, 139,0.5),rgba(139, 248, 204,0.5),rgba(211, 250, 199,0.5)) ;*/
+            background-color: rgb(180, 245, 192);
+            border: 5px solid black;
+        }
+        h1{
+            font-size:10vw;
+            transform:translate(48%,50%);
+        }
+        .text{
+            position: relative;
+            white-space: nowrap;
+            transform:translate(30vw,-47vw);
+        }
+        img{
+            width:25vw;
+            transform: translate(74%,-75%);
+            z-index: 1;
+        }
+        .character {
+            display: inline-block;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            font-size:2.6vw;
+            font-weight: bold;
+            position:absolute;
+            height:32vw;
+        }
+        .character:nth-child(1) { 
+            animation: fadeIn 0.5s forwards; 
+            transform: rotate(-160deg);
+        }
+
+        .character:nth-child(2) { 
+            animation: fadeIn 0.5s forwards 0.2s; 
+            transform: rotate(-152deg);
+        }
+        .character:nth-child(3) { 
+            animation: fadeIn 0.5s forwards 0.4s;
+            transform: rotate(-144deg);
+        }
+        .character:nth-child(4) { 
+            animation: fadeIn 0.5s forwards 0.6s;
+            transform: rotate(-136deg); 
+        }
+        .character:nth-child(5) { 
+            animation: fadeIn 0.5s forwards 0.8s; 
+            transform: rotate(-128deg);
+        }
+        .character:nth-child(6) { 
+            animation: fadeIn 0.5s forwards 1s; 
+            transform: rotate(-120deg);
+        }
+        .character:nth-child(7) { 
+            animation: fadeIn 0.5s forwards 1.2s; 
+            transform: rotate(-112deg);
+        }
+        .character:nth-child(8) { 
+            animation: fadeIn 0.5s forwards 1.4s;
+            transform: rotate(-104deg); 
+        }
+        .character:nth-child(9) { 
+            animation: fadeIn 0.5s forwards 1.6s; 
+            transform: rotate(-96deg);
+        }
+        .character:nth-child(10) { 
+            animation: fadeIn 0.5s forwards 1.8s; 
+            transform: rotate(-88deg);
+        }
+        .character:nth-child(11) { 
+            animation: fadeIn 0.5s forwards 2s; 
+            transform: rotate(-80deg);
+        }
+        .character:nth-child(12) { 
+            animation: fadeIn 0.5s forwards 2.2s; 
+            transform: rotate(-72deg);
+        }
+        .character:nth-child(13) { 
+            animation: fadeIn 0.5s forwards 2.4s; 
+            transform: rotate(-64deg);
+        }
+        .character:nth-child(14) { 
+            animation: fadeIn 0.5s forwards 2.6s; 
+            transform: rotate(-56deg);
+        }
+        .character:nth-child(15) { 
+            animation: fadeIn 0.5s forwards 2.8s; 
+            transform: rotate(-48deg);
+        }
+        .character:nth-child(16) { 
+            animation: fadeIn 0.5s forwards 3s; 
+            transform: rotate(-40deg);
+        }
+        .character:nth-child(17) { 
+            animation: fadeIn 0.5s forwards 3.2s; 
+            transform: rotate(-32deg);
+        }
+        .character:nth-child(18) { 
+            animation: fadeIn 0.5s forwards 3.4s; 
+            transform: rotate(-24deg);
+        }
+        .character:nth-child(19) { 
+            animation: fadeIn 0.5s forwards 3.6s; 
+            transform: rotate(-16deg);
+        }
+        .character:nth-child(20) { 
+            animation: fadeIn 0.5s forwards 3.8s;
+            transform: rotate(-8deg); 
+        }
+        .character:nth-child(21) { 
+            animation: fadeIn 0.5s forwards 4s; 
+            transform: rotate(0deg);
+        }
+        .character:nth-child(22) { 
+            animation: fadeIn 0.5s forwards 4.2s; 
+            transform: rotate(8deg);
+        }
+        .character:nth-child(23) { 
+            animation: fadeIn 0.5s forwards 4.4s; 
+            transform: rotate(16deg);
+        }
+        .character:nth-child(24) { 
+            animation: fadeIn 0.5s forwards 4.6s; 
+            transform: rotate(24deg);
+        }
+        .character:nth-child(25) { 
+            animation: fadeIn 0.5s forwards 4.8s; 
+            transform: rotate(32deg);
+        }
+        .character:nth-child(26) { 
+            animation: fadeIn 0.5s forwards 5.0s;
+            transform: rotate(40deg); 
+        }
+        .character:nth-child(27) { 
+            animation: fadeIn 0.5s forwards 5.2s; 
+            transform: rotate(48deg);
+        }
+        .character:nth-child(28) { 
+            animation: fadeIn 0.5s forwards 5.4s; 
+            transform: rotate(56deg);
+        }
+        .character:nth-child(29) { 
+            animation: fadeIn 0.5s forwards 5.6s; 
+            transform: rotate(64deg);
+        }
+        .character:nth-child(30) { 
+            animation: fadeIn 0.5s forwards 5.8s; 
+            transform: rotate(72deg);
+        }
+        .character:nth-child(31) { 
+            animation: fadeIn 0.5s forwards 6.0s; 
+            transform: rotate(80deg);
+        }
+        .character:nth-child(32) { 
+            animation: fadeIn 0.5s forwards 6.2s;
+            transform: rotate(88deg); 
+        }
+        .character:nth-child(33) { 
+            animation: fadeIn 0.5s forwards 6.4s; 
+            transform: rotate(96deg);
+        }
+        .character:nth-child(34) { 
+            animation: fadeIn 0.5s forwards 6.6s; 
+            transform: rotate(104deg);
+        }
+        .character:nth-child(35) { 
+            animation: fadeIn 0.5s forwards 6.8s; 
+            transform: rotate(112deg);
+        }
+        .character:nth-child(36) { 
+            animation: fadeIn 0.5s forwards 7.0s; 
+            transform: rotate(120deg);
+        }
+        .character:nth-child(37) { 
+            animation: fadeIn 0.5s forwards 7.2s; 
+            transform: rotate(128deg);
+        }
+        .character:nth-child(38) { 
+            animation: fadeIn 0.5s forwards 7.4s; 
+            transform: rotate(136deg);
+        }
+        .character:nth-child(39) { 
+            animation: fadeIn 0.5s forwards 7.6s; 
+            transform: rotate(144deg);
+        }
+        .character:nth-child(40) { 
+            animation: fadeIn 0.5s forwards 7.8s; 
+            transform: rotate(152deg);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0.2; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <h1>AGRO <br> ASSIST</h1>
+    <img src="NO BG LOGO.png" alt="">
+    <div class="text">
+        <span class="character"> </span>
+        <span class="character">Y</span>
+        <span class="character">O</span>
+        <span class="character">U</span>
+        <span class="character">R</span>
+        <span class="character"> </span>
+        <span class="character">G</span>
+        <span class="character">A</span>
+        <span class="character">T</span>
+        <span class="character">E</span>
+        <span class="character">W</span>
+        <span class="character">A</span>
+        <span class="character">Y</span>
+        <span class="character"> </span>
+        <span class="character">T</span>
+        <span class="character">O</span>
+        <span class="character"> </span>
+        <span class="character">A</span>
+        <span class="character">G</span>
+        <span class="character">R</span>
+        <span class="character">I</span>
+        <span class="character">C</span>
+        <span class="character">U</span>
+        <span class="character">L</span>
+        <span class="character">T</span>
+        <span class="character">U</span>
+        <span class="character">R</span>
+        <span class="character">A</span>
+        <span class="character">L</span>
+        <span class="character"> </span>
+        <span class="character">E</span>
+        <span class="character">X</span>
+        <span class="character">C</span>
+        <span class="character">E</span>
+        <span class="character">L</span>
+        <span class="character">L</span>
+        <span class="character">E</span>
+        <span class="character">N</span>
+        <span class="character">C</span>
+        <span class="character">Y</span>
+    </div>
+</body>
+</html>
